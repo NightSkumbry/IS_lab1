@@ -38,3 +38,6 @@ out/
 
 ### LocalFiles ###
 LocalFiles/
+
+# Environment files
+.env
