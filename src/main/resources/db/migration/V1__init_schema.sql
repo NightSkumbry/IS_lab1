@@ -16,7 +16,7 @@ CREATE TABLE location (
 CREATE TABLE address (
     id BIGSERIAL PRIMARY KEY,
     zip_code VARCHAR(255),
-    location_id BIGINT REFERENCES location(id) ON DELETE RESTRICT,
+    town_id BIGINT REFERENCES location(id) ON DELETE RESTRICT,
 
     CONSTRAINT chk_address_zip_code_length CHECK (zip_code IS NULL OR length(zip_code) >= 6)
 );
