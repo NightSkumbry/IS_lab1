@@ -3,8 +3,8 @@ package com.p3319.lab1.dto.product;
 import java.time.ZonedDateTime;
 
 import com.p3319.lab1.dto.common.CoordinatesDto;
-import com.p3319.lab1.dto.organization.OrganizationShortDto;
-import com.p3319.lab1.dto.person.PersonShortDto;
+import com.p3319.lab1.dto.organization.OrganizationResponseDto;
+import com.p3319.lab1.dto.person.PersonResponseDto;
 import com.p3319.lab1.entity.enums.UnitOfMeasure;
 
 import lombok.AllArgsConstructor;
@@ -20,10 +20,10 @@ public class ProductResponseDto {
     private CoordinatesDto coordinates;
     private ZonedDateTime creationDate;
     private UnitOfMeasure unitOfMeasure;
-    private OrganizationShortDto manufacturer;
+    private OrganizationResponseDto manufacturer;
     private float price;
     private Double manufactureCost;
     private double rating;
     private String partNumber;
-    private PersonShortDto owner;
+    private PersonResponseDto owner;
 }

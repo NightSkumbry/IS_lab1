@@ -135,12 +135,12 @@ public class EntityMapper {
                 toDto(entity.getCoordinates()),
                 entity.getCreationDate(),
                 entity.getUnitOfMeasure(),
-                toShortDto(entity.getManufacturer()),
+                toDto(entity.getManufacturer()),
                 entity.getPrice(),
                 entity.getManufactureCost(),
                 entity.getRating(),
                 entity.getPartNumber(),
-                toShortDto(entity.getOwner())
+                toDto(entity.getOwner())
         );
     }
 }
