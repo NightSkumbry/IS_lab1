@@ -1,0 +1,18 @@
+export const routes = {
+  login: '/login',
+  register: '/register',
+  products: '/products',
+  productNew: '/products/new',
+  product: (id: number | string) => `/products/${id}`,
+  productEdit: (id: number | string) => `/products/${id}/edit`,
+  organizations: '/organizations',
+  organizationNew: '/organizations/new',
+  organization: (id: number | string) => `/organizations/${id}`,
+  organizationEdit: (id: number | string) => `/organizations/${id}/edit`,
+  persons: '/persons',
+  personNew: '/persons/new',
+  person: (id: number | string) => `/persons/${id}`,
+  personEdit: (id: number | string) => `/persons/${id}/edit`,
+  special: '/special',
+  specialOperation: (slug: string) => `/special/${slug}`,
+} as const

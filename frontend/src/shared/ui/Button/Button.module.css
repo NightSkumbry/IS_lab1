@@ -1,0 +1,72 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* размеры — заданы до вариантов, чтобы ghost мог сбросить padding вне зависимости от size */
+.md {
+  padding: 8px 16px;
+}
+
+.sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--color-bg);
+}
+
+.danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.danger:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+/* без рамки и фона — заголовки с сортировкой, «×» в модалке и т.п.; padding сброшен намеренно */
+.ghost {
+  padding: 0;
+  background: none;
+  color: inherit;
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--color-primary);
+}

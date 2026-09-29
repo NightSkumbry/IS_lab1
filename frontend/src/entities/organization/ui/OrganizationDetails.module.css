@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.root h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  margin: 0;
+}
+
+.list dt {
+  color: var(--color-text-muted);
+}
+
+.list dd {
+  margin: 0;
+  word-break: break-word;
+}

@@ -1,0 +1,10 @@
+.title {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

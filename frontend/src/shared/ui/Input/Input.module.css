@@ -1,0 +1,20 @@
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.input:focus {
+  outline: 2px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-color: var(--color-primary);
+}
+
+.invalid,
+.invalid:focus {
+  border-color: var(--color-danger);
+  outline-color: color-mix(in srgb, var(--color-danger) 30%, transparent);
+}

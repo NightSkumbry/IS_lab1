@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.card {
+  width: min(380px, 100%);
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.footer {
+  margin: 16px 0 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
