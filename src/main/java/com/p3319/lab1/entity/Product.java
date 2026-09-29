@@ -30,8 +30,8 @@ public class Product {
     private String name;
 
     @NotNull(message = "Product.coordinates can't be null")
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "coordinates_id", nullable = false)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
+    @JoinColumn(name = "coordinates_id", nullable = false, unique = true)
     private Coordinates coordinates;
 
     @NotNull(message = "Product.creationDate can't be null")

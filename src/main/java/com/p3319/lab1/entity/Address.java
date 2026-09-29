@@ -22,7 +22,7 @@ public class Address {
     @Column(name = "zip_code")
     private String zipCode;
 
-    @ManyToOne
-    @JoinColumn(name = "town_id")
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "town_id", unique = true)
     private Location town;
 }

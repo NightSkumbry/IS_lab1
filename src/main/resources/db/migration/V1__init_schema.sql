@@ -16,7 +16,7 @@ CREATE TABLE location (
 CREATE TABLE address (
     id BIGSERIAL PRIMARY KEY,
     zip_code VARCHAR(255),
-    town_id BIGINT REFERENCES location(id) ON DELETE RESTRICT,
+    town_id BIGINT UNIQUE REFERENCES location(id) ON DELETE CASCADE,
 
     CONSTRAINT chk_address_zip_code_length CHECK (zip_code IS NULL OR length(zip_code) >= 6)
 );
@@ -24,12 +24,12 @@ CREATE TABLE address (
 CREATE TABLE organization (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    official_address_id BIGINT NOT NULL REFERENCES address(id) ON DELETE RESTRICT,
+    official_address_id BIGINT UNIQUE NOT NULL REFERENCES address(id) ON DELETE CASCADE,
     annual_turnover BIGINT NOT NULL,
     employees_count INT NOT NULL,
     rating REAL NOT NULL,
     type VARCHAR(50),
-    postal_address_id BIGINT NOT NULL REFERENCES address(id) ON DELETE RESTRICT,
+    postal_address_id BIGINT UNIQUE NOT NULL REFERENCES address(id) ON DELETE CASCADE,
 
     CONSTRAINT chk_org_name_not_empty CHECK (length(trim(name)) > 0),
     CONSTRAINT chk_org_annual_turnover_positive CHECK (annual_turnover > 0),
@@ -42,7 +42,7 @@ CREATE TABLE person (
     name VARCHAR(255) NOT NULL,
     eye_color VARCHAR(50),
     hair_color VARCHAR(50) NOT NULL,
-    location_id BIGINT REFERENCES location(id) ON DELETE RESTRICT,
+    location_id BIGINT UNIQUE REFERENCES location(id) ON DELETE CASCADE,
     weight INT,
     nationality VARCHAR(50) NOT NULL,
 
@@ -53,7 +53,7 @@ CREATE TABLE person (
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    coordinates_id BIGINT NOT NULL REFERENCES coordinates(id) ON DELETE RESTRICT,
+    coordinates_id BIGINT UNIQUE NOT NULL REFERENCES coordinates(id) ON DELETE CASCADE,
     creation_date TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     unit_of_measure VARCHAR(50) NOT NULL,
     manufacturer_id BIGINT NOT NULL REFERENCES organization(id) ON DELETE RESTRICT,
